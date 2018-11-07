@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 Route::post('/products/add', "ProductController@create");
 Route::get('/products', "ProductController@getInventoryList");
+Route::get('/product/show/{name}', "ProductController@showProduct");
+Route::post('/product/edit', "ProductController@editProduct");

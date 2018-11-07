@@ -52,8 +52,8 @@
                         </form>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <div class="row alert alert-success collapse" style="font-size:18px"><strong><span class="help-block text-center" id="notification_success"></span></strong></div>
-                                <div class="row alert alert-danger collapse" style="font-size:18px"><strong><span class="help-block text-center" id="notification_error"></span></strong></div>
+                                <div class="row alert alert-success collapse" id="new-success" style="font-size:18px"><strong><span class="help-block text-center" id="notification_success"></span></strong></div>
+                                <div class="row alert alert-danger collapse" id="new-danger" style="font-size:18px"><strong><span class="help-block text-center" id="notification_error"></span></strong></div>
                             </div>
                         </div>
                     </div>
@@ -78,6 +78,50 @@
 
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Product</h4>
+                    </div>
+                    <form class="form-horizontal" id="edit-product-form" >
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="product_name" class="control-label col-sm-4">Product Name:</label>
+                                <input name="old_product_name" type="hidden" >
+                                <div class="col-sm-6"><input name="edit_product_name" required="required" type="text" class="form-control"></div>
+                            </div><br>
+                            <div class="form-group">
+                                <label for="quantity" class="control-label col-sm-4">Quantity in stock:</label>
+                                <div class="col-sm-2"><input name="edit_quantity" required="required" type="number" class="form-control"></div>
+                            </div><br>
+                            <div class="form-group">
+                                <label for="price" class="control-label col-sm-4">Price per item (in $):</label>
+                                <div class="col-sm-2"><input name="edit_price" required="required" step="0.01" type="number" class="form-control"></div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row alert alert-danger collapse" id="edit-danger" style="font-size:18px"><strong><span class="help-block text-center" id="edit_notification_error"></span></strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-6 text-center"><button class="btn btn-default" name="reset" type="button">Reset</button></div>
+                                <div class="col-sm-6 text-center"><button class="btn btn-primary" name="submit" type="submit">Submit</button></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </body>
